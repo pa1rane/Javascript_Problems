@@ -35,3 +35,36 @@ var isAnagram = function(test, original) {
    return true
  } return false
 };
+
+
+// Q3: You are given an array of objects representing books 
+// in a library. Each book object has the following properties
+
+// const books = [
+//   { title: "The Great Gatsby", author: "F. Scott Fitzgerald", rating: 4.2 },
+//   { title: "To Kill a Mockingbird", author: "Harper Lee", rating: 4.5 },
+//   { title: "1984", author: "George Orwell", rating: 4.8 },
+//   { title: "Pride and Prejudice", author: "Jane Austen", rating: 4.1 },
+// ];
+
+// Your task is to perform the following steps:
+
+// 1)Find the book with the highest rating using array.find.
+// 2)Sort the books in descending order of their ratings using array.sort.
+// 3)Create an array containing only the titles of the books using array.map.
+
+const books = [
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", rating: 4.2 },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", rating: 4.5 },
+  { title: "1984", author: "George Orwell", rating: 4.8 },
+  { title: "Pride and Prejudice", author: "Jane Austen", rating: 4.1 },
+];
+
+// Problem no 1
+const highestRated = books.find((book) => book.rating === Math.max(...books.map((book) => book.rating)) );
+
+// problem no 2
+const sortBooks = books.sort((a,b) => b.rating = a.rating);
+
+//Problem no 3
+const bookTitles = books.map((book) => book.title);
