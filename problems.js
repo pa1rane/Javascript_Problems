@@ -68,3 +68,20 @@ const sortBooks = books.sort((a,b) => b.rating = a.rating);
 
 //Problem no 3
 const bookTitles = books.map((book) => book.title);
+
+// Q4: You must implement a function that returns the difference between the largest and the smallest value 
+// in a given list / array (lst) received as the parameter.
+// lst contains integers, that means it may contain some negative numbers
+// if lst is empty or contains a single element, return 0
+// lst is not sorted
+
+function maxDiff(list) {
+  //First we will sort the List.
+   const sortedList = list.sort((a,b) => a - b);
+  //then we will extract the first and last value of list, and if the list contain more than 1 number subtract the smallest valuw with largest
+   // else return 0;
+   if (sortedList.length > 1) {
+     return sortedList[sortedList.length - 1] - sortedList[0]
+   }
+     return 0
+};  
