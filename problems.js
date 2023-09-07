@@ -96,9 +96,24 @@ function maxDiff(list) {
 
 // Example 2: Input: {3, 1, 2}, {4, 5}, 21 --> Output: 6
 
-// Good luck! :-)
 
 function lostSheep(friday,saturday,total){
   return total - (friday.reduce((acc, sheep) => acc += sheep, 0) + 
                   saturday.reduce((acc, sheep) => acc += sheep, 0))
 }
+
+
+// Q6 : Reverse a message so that the words and letters passed into it 
+// are made lower case and reversed. In addition, capitalise the first 
+// letter of the newly reversed words. If a number or symbol(!#,>) is 
+// now in the first position of the word, no capitalisation needs to occur.
+
+// Example:
+
+// reverseMessage('This is an example of a Reversed Message!');
+// Returns: '!egassem Desrever A Fo Elpmaxe Na Si Siht'
+
+function reverseMessage(str) {
+  const reversedStr =  str.split("").reverse().join("").toLowerCase();
+  return  reversedStr.split(" ").map((s) => (/^[a-zA-Z]/.test(s)) ? s[0].toUpperCase() + s.slice(1) : s).join(" ");
+ }
