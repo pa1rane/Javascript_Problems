@@ -117,3 +117,20 @@ function reverseMessage(str) {
   const reversedStr =  str.split("").reverse().join("").toLowerCase();
   return  reversedStr.split(" ").map((s) => (/^[a-zA-Z]/.test(s)) ? s[0].toUpperCase() + s.slice(1) : s).join(" ");
  }
+
+
+//  Q7: Create a function that takes a number and finds the factors of it, listing them in descending order in an array.
+//  If the parameter is not an integer or less than 1, return -1. In C# return an empty array.
+//  For Example: factors(54) should return [54, 27, 18, 9, 6, 3, 2, 1]
+
+function factors(x) {
+  const factorsArr = [];
+  for (let i = 0; i <= x; i++) {
+    if (x % i === 0) {
+      factorsArr.unshift(i)
+    }
+  }
+   return factorsArr;
+}
+ 
+ 
