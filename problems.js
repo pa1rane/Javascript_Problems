@@ -124,13 +124,18 @@ function reverseMessage(str) {
 //  For Example: factors(54) should return [54, 27, 18, 9, 6, 3, 2, 1]
 
 function factors(x) {
-  const factorsArr = [];
-  for (let i = 0; i <= x; i++) {
-    if (x % i === 0) {
-      factorsArr.unshift(i)
+    const factorsArr = [];
+
+    if (!Number.isInteger(x) || x < 1 ) {
+      return -1;
+  } else {
+    for (let i = x; i >= 1; i--) {
+      if (x % i === 0) {
+        factorsArr.push(i)
+      }
     }
+      return factorsArr;
+  }  
   }
-   return factorsArr;
-}
  
  
